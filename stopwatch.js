@@ -3,11 +3,14 @@ window.onload =
   //---vars to access html elements ---//
   let seconds = 00;
   let tens = 00;
-   
+  let minutes = 00;
+
   let appendTens = document.getElementById("tens");
   let appendSeconds = 
       document.getElementById("seconds");
-  
+  let appendMinutes =
+  document.getElementById("minutes");
+
   let buttonStart = document.getElementById("button-start");
   let buttonStop = document.getElementById("button-stop");
   let buttonReset = document.getElementById("button-reset");
@@ -28,7 +31,9 @@ window.onload =
     clearInterval(Interval);
     tens="00";
     seconds = "00";
-      appendTens.innerHTML = tens;
+    minutes ="00";
+    appendMinutes.innerHTML = minutes;
+    appendTens.innerHTML = tens;
     appendSeconds.innerHTML = seconds;
   }
   
@@ -55,9 +60,10 @@ window.onload =
       appendSeconds.innerHTML = seconds;
     }
     if (seconds > 59) {
+         minutes++;
          seconds = 0; 
         appendSeconds.innerHTML = "0" + 0;
-  
+        appendMinutes.innerHTML = "0" + minutes;
     }
   }
   
